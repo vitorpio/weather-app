@@ -16,12 +16,15 @@
             <input type="text" placeholder="Location" name='location'>
             <button>Search</button>
         </form>
-        {{#if error }}
+        {{#if error}}
         <p id="message-1">{{error}}</p>
-        {{else}}
+        {{/if}}
+        {{#if location}}
         <p id="message-1">{{location}}</p>
-        <p id="message-2">Temperature: {{temperature}}</p>
-        <p id="message-2">Feels like: {{temperature}}</p>
+        <p id="message-2">Temperature: {{temperature}} ºC</p>
+        <p id="message-3">Feels like: {{feelslike}} ºC</p>
+        <p id="message-4">Humidity: {{humidity}} %</p>
+        <p id="message-5">Wind speed: {{wind_speed}} km/h</p>
         {{/if}}
     </div>
     {{>footer}}

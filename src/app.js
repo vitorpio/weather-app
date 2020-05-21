@@ -58,7 +58,16 @@ app.post('/', (req, res, next) => {
             forecast(
                 latitude,
                 longitude,
-                (error, { description, temperature, feelslike } = {}) => {
+                (
+                    error,
+                    {
+                        description,
+                        temperature,
+                        feelslike,
+                        humidity,
+                        wind_speed
+                    } = {}
+                ) => {
                     if (error) {
                         return res.render('index', {
                             title: 'Weather App',
@@ -70,7 +79,9 @@ app.post('/', (req, res, next) => {
                         location,
                         description,
                         temperature,
-                        feelslike
+                        feelslike,
+                        humidity,
+                        wind_speed
                     })
                 }
             )

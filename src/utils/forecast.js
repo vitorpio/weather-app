@@ -20,12 +20,16 @@ const forecast = (latitude, longitude, callback) => {
             const {
                 weather_descriptions,
                 temperature,
-                feelslike
+                feelslike,
+                humidity,
+                wind_speed
             } = body.current
             callback(undefined, {
                 description: weather_descriptions[0],
                 temperature,
-                feelslike
+                feelslike,
+                humidity,
+                wind_speed
             })
         }
     })
