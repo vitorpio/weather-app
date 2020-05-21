@@ -86,6 +86,6 @@ app.get('*', (req, res) => {
     res.render('404', { title: '404', message: 'Page not found' })
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('Server is running')
 })
